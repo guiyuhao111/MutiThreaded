@@ -5,31 +5,31 @@ public class ThreadMethod {
 //        Thread thread=new Thread(new MyThread());
 //        thread.start();
         //interrupt()必须和isInterrupted()配合起来中断程序
-//        MyThread1 thread1=new MyThread1();
-//        thread1.start();
-//        try {
-//            Thread.sleep(1000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        thread1.interrupt();
-//        thread.interrupt();
-
-        ThreadJoin2 threadJoin2=new ThreadJoin2();
-        threadJoin2.start();
+        MyThread1 thread1=new MyThread1();
+        thread1.start();
         try {
-            threadJoin2.join();
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        for (int i = 0; i < 10; i++) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("main"+i);
-        }
+        thread1.interrupt();
+        //thread.interrupt();
+
+//        ThreadJoin2 threadJoin2=new ThreadJoin2();
+//        threadJoin2.start();
+//        try {
+//            threadJoin2.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        for (int i = 0; i < 10; i++) {
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            System.out.println("main"+i);
+//        }
     }
 }
 class MyThread implements  Runnable{
