@@ -23,6 +23,11 @@ class TimerCir extends TimerTask{
     public void run() {
         i++;
         System.out.println("执行");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         while(i==10){
             //cancel取消当时执行任务
             cancel();
