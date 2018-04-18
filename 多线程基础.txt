@@ -102,7 +102,7 @@ https://blog.csdn.net/javazejian/article/details/72828483
 8:定时器:Timer,定时任务:TimerTask
 1.相关文献:
 ---1.Timer是一种线程设施，用于安排以后在后台线程中执行的任务。可安排任务执行一次，或者定期重复执行，可以看成一个定时器，可以调度TimerTask。
-     TimerTask是一个抽象类，实现了Runnable接口，所以具备了多线程的能力。
+     TimerTask是一个抽象类，实现了Runnable接口，所以具备了线程的能力。实际上Timer的所有任务都是靠TimerThread来执行的,也就是说它的所有任务都是用一个线程来执行,如果想要用多线程来执行建议使用线程池newScheduledThreadPool来实现.
 ---2.自己的理解,Timer有两个属性:
 	---1.TimerTask队列,TimerTask队列实际上是个TimerTask数组,任务执行时一个Timer可以启动多个TimerTask实际上用TimerTask队列存放
 	---2.TimerThread:TimerThread继承了Thread
